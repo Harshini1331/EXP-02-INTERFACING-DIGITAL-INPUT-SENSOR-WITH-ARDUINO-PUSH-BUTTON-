@@ -29,12 +29,14 @@ PIN DIAGRAM FOR ATMEGA 328
  
 ![image](https://user-images.githubusercontent.com/36288975/163530394-115baee4-7ed1-49fe-9cce-d7b625e11e85.png)
 
+
 FIGURE-01
 ![image](https://user-images.githubusercontent.com/36288975/163530431-4d390e98-0942-42d8-95b8-f57d348e6ad8.png)
 
 
 
 FIGURE-02
+
 PROCEDURE 
  Open tinker cad account 
 1.	Select Arduino uno , bread board , digital input and digital output 
@@ -44,38 +46,36 @@ PROCEDURE
 5.	Check the simulation 
 
 
-
-
-
-
-
-
 CIRCUIT DIAGRAM 
-
-
-
-
 
 ![image](https://user-images.githubusercontent.com/36288975/163530437-87a0afbd-b3c9-44ad-b907-5de63486fb9d.png)
 
 
+PROGRAM:
+```python
+int buttonState = 0;
 
-FIGURE -03
+void setup()
+{
+  pinMode(2, INPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
 
-
-
-
-
-PROGRAM 
- 
- 
- 
- 
- 
-
-
+void loop()
+{
+  buttonState = digitalRead(2);
+  if (buttonState == HIGH) {
+    digitalWrite(LED_BUILTIN, HIGH);
+  } 
+  else 
+  {
+    digitalWrite(LED_BUILTIN, LOW);
+  }
+  delay(10); 
+}
+```
 
 Output of the simulation :
 
-[My image](username.github.com/repository/img/image.jpg)
+<img width="956" alt="image" src="https://user-images.githubusercontent.com/75235554/191552789-6520c23d-5f93-4613-8353-460e91a6f3d9.png">
 
